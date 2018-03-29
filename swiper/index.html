@@ -34,7 +34,11 @@
 		.swiper-slide:nth-child(4){
 			background:blue;
 		}
-
+		.swiper-container{
+			-webkit-transform: translate3d(0, 0, 0);
+					transform: translate3d(0, 0, 0);
+			overflow: hidden;
+		}
 	</style>
 </head>
 <body>
@@ -56,8 +60,15 @@
 	</div>
 </body>
 <script src="js/zepto.min.js"></script>
-<script src="js/TouchSlide.1.1.js"></script>
+<script src="js/swiper-4.1.6.min.js"></script>
 <script>
-	TouchSlide({ slideCell:"#leftTabBox" });
+	var mySwiper = new Swiper('.swiper-container', {
+									autoplay: false,//可选选项，自动滑动
+									resistanceRatio:0,
+									navigation: {
+								        nextEl: '.swiper-button-next',
+								        prevEl: '.swiper-button-prev',
+								    }
+								})
 </script>
 </html>
